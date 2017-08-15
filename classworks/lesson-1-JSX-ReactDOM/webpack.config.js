@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index',
+  entry: './src/main',
   output: {
     filename: './bundle.js'
   },
@@ -16,6 +16,10 @@ module.exports = {
             presets: ['react', 'env']
           }
         }
+      },
+      {
+        test: /\.css$/,
+        use: [ 'style-loader', 'css-loader' ]
       }
     ]
   },
