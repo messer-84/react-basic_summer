@@ -1,8 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './theme/index.css';
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './services/registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const render = Component => {
+  ReactDOM.render(
+    <Component />,
+    document.getElementById('root')
+  );
+};
+// webpack-dev-server
+// 
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App);
+  });
+}
+
+render(App);
+
 registerServiceWorker();
