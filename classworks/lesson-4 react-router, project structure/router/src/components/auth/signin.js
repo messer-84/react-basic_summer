@@ -11,6 +11,10 @@ class Signin extends Component {
     this.updateInput = this.updateInput.bind(this);
   }
 
+  componentDidMount() {
+    console.log(this.props.history.push('/counter'));
+  }
+
   updateInput(e) {
     let inputName = e.target.name;
 
