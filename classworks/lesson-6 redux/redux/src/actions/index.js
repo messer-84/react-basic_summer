@@ -2,7 +2,22 @@
 import { DEC, INC } from './types';
 
 export const increment = () => {
-  return { type: INC };
+  return dispatch => {
+    setTimeout(() => {
+      dispatch({ type: INC });
+        
+    }, 1000);
+    //  => token 
+    //  => dispatch(profile) 
+    //  => repository
+
+    token()
+    profile()
+    repository()    
+    
+    // profile
+    // repository
+  };
 };
 
 // action-creator
